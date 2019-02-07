@@ -1,20 +1,16 @@
-var finalArr = []
-
-function listInsertion(){
-    var x = document.getElementById("list")
-    if(document.getElementById("myText").value === ""){
-        alert("Please enter to list")
-        return false
-    }else {
-        var length = finalArr.length +1
-        if(length %3===0){
-            finalArr.push("<span style=\"color:red\">" + document.getElementById("myText").value + "</span>");
-
-        }else{
-            finalArr.push(document.getElementById("myText").value);
-
-        }
+$("#myText").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#myButton").click();
     }
-        x.innerHTML = finalArr.join("</br>");
-  
-}
+});
+
+var count = 1
+$("#myButton").click(function() {
+    if(count % 3 === 0){
+        $("div").append("<span style='color:red'>" + myText.value + "</span></br>")
+    }else{
+        $("div").append(myText.value + "</br>");
+    }
+    count++
+});
+
